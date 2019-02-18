@@ -10,11 +10,10 @@ urlpatterns = [
     #Paths de books
     path("books/", include('docker_django.apps.books.urls')),
     
-    
     # Paths de blog
     #path('blog/', include('docker_django.apps.blog.urls')),
     # Paths de pages
-    #path('page/', include('docker_django.apps.pages.urls')),
+    path('page/', include('docker_django.apps.pages.urls')),
     # Paths de pages
     #path('contact/', include('docker_django.apps.contact.urls')),
     # Paths del admin

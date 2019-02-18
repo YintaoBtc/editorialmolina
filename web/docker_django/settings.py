@@ -40,6 +40,11 @@ INSTALLED_APPS = (
     # apps
     'docker_django.apps.core',
     'docker_django.apps.books',
+    'docker_django.apps.social',
+    'docker_django.apps.pages',
+
+    #Thirds apps
+    'ckeditor',
     
 )
 
@@ -67,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'docker_django.apps.social.processors.ctx_dict', #AÑADIDO TEST
             ],
         },
     },
@@ -122,3 +128,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT =os.path.join(BASE_DIR, "media")
+
+
+
+# Ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink']
+        ]
+    }
+}
