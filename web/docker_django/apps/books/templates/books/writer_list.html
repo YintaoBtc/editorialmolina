@@ -1,0 +1,12 @@
+<h1>Escritor</h1>
+
+{% for writer in object_list %}
+
+<ul> 
+    <il> Nombre: {{ writer.name }} </il><br>
+    <il> Apellido: {{ writer.last_name }} </il><br>
+    <il> Libros: {{ writer.books }} </il><br>
+</ul>
+
+
+{% endfor %}

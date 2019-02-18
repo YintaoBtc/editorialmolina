@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Libros{% endblock %}
+
+{% block content %}
+
+
+{% for book in object_list %}
+
+<ul> 
+    <il> Título: {{ book.title }} </il><br>
+    <il> Nombre: {{ book.autor}} </il><br>
+    <il> Apellido: {{ book.autor.last_name }} </il><br>
+    <il> ISBN: {{ book.ISBN }} </il><br>
+</ul>
+
+{% endfor %}
+
+{% endblock %}
