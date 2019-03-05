@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from ..books.models import Book, Writer
 
 
 def home(request):
-    return render(request, "core/home.html")
+    books=Book.objects.all()
+    num_authors=Writer.objects.count()
+    num_books=Book.objects.all().count()
+    return render(request, "core/home.html", context={"books":books, "num_books":num_books, "num_authors":num_authors})
 
 def about(request):
     return render(request, "core/about.html")

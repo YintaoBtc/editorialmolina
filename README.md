@@ -1,3 +1,23 @@
+## Proyecto para la editorial La Tirla la Tierra
+
+Desarollo en django con docker. 
+
+Paginas:
+
+1. Portada
+1. Historia
+1. Libros
+1. Autores
+1. Visitanos
+1. Contacto
+
+Panel Administrador
+1. Gestion de usuarios
+1. Gestion de libros
+1. Gestion de autores
+1. Gestion de redes sociales
+1. Gestion de paginas secundarias
+
 ## Django Development With Docker Compose and Machine
 
 Featuring:

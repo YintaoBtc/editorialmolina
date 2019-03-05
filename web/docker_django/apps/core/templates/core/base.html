@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{% block title %}{% endblock %} | La Caffettiera</title>
+    <title>{% block title %}{% endblock %} | Editorial La Tirla Tierra</title>
 
     {% load static %}
 
@@ -29,7 +29,7 @@
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
       <span class="site-heading-upper text-primary mb-3">Editorial Molina</span>
-      <span class="site-heading-lower">Editorial sin animo de lucro</span>
+      <span class="site-heading-lower">Editorial La Tirla Tierra</span>
     </h1>
 
     <!-- Navegación -->
@@ -44,22 +44,20 @@
             <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Inicio</a>
             </li>
-            <li class="nav-item {% if request.path == '/about/' %} active {% endif %} px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'about' %}">Historia</a>
-            </li>
             <li class="nav-item {% if request.path == '/books/' %} active {% endif %} px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'books' %}">Libros</a>
             </li>
-          <!--
+            <li class="nav-item {% if request.path == '/books/writer/' %} active {% endif %} px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'writer' %}">Autores</a>
+            </li>
+            <li class="nav-item {% if request.path == '/about/' %} active {% endif %} px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'about' %}">Nosotros</a>
+            </li>
             <li class="nav-item {% if request.path == '/store/' %} active {% endif %} px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'store' %}">Visítanos</a>
             </li>
-          !-->
             <li class="nav-item {% if request.path == '/contact/' %} active {% endif %} px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'contact' %}">Contacto</a>
-            </li>
-            <li class="nav-item {% if request.path == '/blog/' %} active {% endif %} px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'blog' %}">Blog</a>
             </li>
           </ul>
         </div>
@@ -100,7 +98,7 @@
           {% load pages_extras %}
           {% get_page_list as page_list %}
           {% for page in page_list %}
-            <a href="{% url 'page' page.id %}" class="link"> {{page.title}} </a> .
+            <a href="{% url 'page' page.id page.title|slugify %}" class="link"> {{page.title}} </a> {% if not forloop.last %}.{% endif %} 
           {% endfor%}
         </p>
         <p class="m-0 mbt1">&copy; Yintao</p>

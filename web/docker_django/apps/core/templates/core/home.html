@@ -19,7 +19,7 @@
         <p class="mb-3">Trabajamos sólo con los mejores ingredientes. Una vez lo pruebes, nuestro café será la mejor forma de empezar tu rutina diaria.
         </p>
         <div class="intro-button mx-auto">
-          <a class="btn btn-primary btn-xl" href="store.html">Visítanos</a>
+          <a class="btn btn-primary btn-xl" href="{% url 'books' %}">Libros</a>
         </div>
       </div>
     </div>
@@ -33,10 +33,22 @@
       <div class="col-xl-9 mx-auto">
         <div class="cta-inner text-center rounded">
           <h2 class="section-heading mb-4">
-            <span class="section-heading-upper">Compromiso total</span>
-            <span class="section-heading-lower">Garantizado</span>
+            <span class="section-heading-upper">Ultimas publicaciones</span>
+            <span class="section-heading-lower">Novedades</span>
           </h2>
-          <p class="mb-0">Sed pulvinar blandit elit id venenatis. Ut eget lacus neque. Nullam justo quam, efficitur nec turpis vitae, efficitur posuere ligula. Proin ut turpis orci. Aenean porta sodales lectus faucibus pellentesque. In sed felis iaculis, rhoncus felis a, maximus mi.</p>
+          <p>
+            <li><strong>Autores:</strong> {{ num_authors }}</li>
+            <li><strong>Libros:</strong> {{ num_books }}</li>
+            
+            {% for book in books %}
+              <ul>
+                  <il> Título: {{ book.title }} </il><br>
+                  <il> Nombre: {{ book.autor}} </il><br>
+                  <il> Descripcion: {{ book.description }} </il><br>
+              </ul>
+
+            {% endfor %}
+          </p>
         </div>
       </div>
     </div>
