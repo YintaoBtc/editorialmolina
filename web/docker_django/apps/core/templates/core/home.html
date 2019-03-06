@@ -39,19 +39,24 @@
           <p>
             <li><strong>Autores:</strong> {{ num_authors }}</li>
             <li><strong>Libros:</strong> {{ num_books }}</li>
-            
-            {% for book in books %}
-              <ul>
-                  <il> Título: {{ book.title }} </il><br>
-                  <il> Nombre: {{ book.autor}} </il><br>
-                  <il> Descripcion: {{ book.description }} </il><br>
-              </ul>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
 
-            {% endfor %}
           </p>
         </div>
       </div>
     </div>
+    <section class="page-section cta">
+    {% for book in books %}
+        <ul>
+            <il> Título: {{ book.title }} </il><br>
+            <il> Nombre: {{ book.autor}} </il><br>
+            <il> Descripcion: {{ book.description }} </il><br>
+            <il><a href="{% url 'book' book.id %}">Ver libro</a> </il><br>
+        </ul>
+      {% endfor %}
+  </section>
   </div>
 </section>
 {% endblock %}

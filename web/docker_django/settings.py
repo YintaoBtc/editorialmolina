@@ -31,6 +31,7 @@ INSTALLED_APPS = (
     'docker_django.apps.books',
     'docker_django.apps.social',
     'docker_django.apps.pages',
+    'docker_django.apps.contact',
     #Thirds apps
     'ckeditor',
     
@@ -126,3 +127,10 @@ CKEDITOR_CONFIGS = {
         ]
     }
 }
+
+# Email config
+EMAIL_HOST = os.environ['EMAIL_HOST']
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_PORT = os.environ['EMAIL_PORT']
+

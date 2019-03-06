@@ -4,7 +4,9 @@
 venv
 env
 __pycache__
+.env
 .venv
 .cache
 Pipfile
 Pipfile.lock
+.vscode
