@@ -28,6 +28,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # apps
     'docker_django.apps.core',
+    'docker_django.apps.blog',
     'docker_django.apps.books',
     'docker_django.apps.social',
     'docker_django.apps.pages',

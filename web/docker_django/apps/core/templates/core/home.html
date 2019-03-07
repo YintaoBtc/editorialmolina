@@ -33,8 +33,8 @@
       <div class="col-xl-9 mx-auto">
         <div class="cta-inner text-center rounded">
           <h2 class="section-heading mb-4">
-            <span class="section-heading-upper">Ultimas publicaciones</span>
-            <span class="section-heading-lower">Novedades</span>
+            <span class="section-heading-upper">Info de la editorial</span>
+            <span class="section-heading-lower">Cosas varias</span>
           </h2>
           <p>
             <li><strong>Autores:</strong> {{ num_authors }}</li>
@@ -47,16 +47,32 @@
         </div>
       </div>
     </div>
-    <section class="page-section cta">
-    {% for book in books %}
-        <ul>
-            <il> Título: {{ book.title }} </il><br>
-            <il> Nombre: {{ book.autor}} </il><br>
-            <il> Descripcion: {{ book.description }} </il><br>
-            <il><a href="{% url 'book' book.id %}">Ver libro</a> </il><br>
-        </ul>
-      {% endfor %}
-  </section>
   </div>
-</section>
+</section>    
+
+
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">Ultimas publicaciones</span>
+            <span class="section-heading-lower">Novedades</span>
+          </h2>
+          <p>
+            {% for book in books %}
+                <b>Título:</b> {{ book.title }} <br>
+                <b>Nombre:</b> {{ book.autor}} <br>
+                <b>Descripcion:</b> {{ book.description }} <br>
+                <b>Publicado:</b> {{ book.created }}<br>
+                <a href="{% url 'book' book.id %}">Ver más</a> <br><br>
+            {% endfor %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
+
 {% endblock %}
