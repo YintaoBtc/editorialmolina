@@ -63,7 +63,7 @@
           <p>
             {% for book in books %}
                 <b>Título:</b> {{ book.title }} <br>
-                <b>Nombre:</b> {{ book.autor}} <br>
+                <b>Autor:</b> {{ book.autor}} <br>
                 <b>Descripcion:</b> {{ book.description }} <br>
                 <b>Publicado:</b> {{ book.created }}<br>
                 <a href="{% url 'book' book.id %}">Ver más</a> <br><br>

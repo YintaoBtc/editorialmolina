@@ -17,13 +17,13 @@
               </h2>
             </div>
           </div>
-          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{book.img_front.url}}" alt="">
-          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{book.img_back.url}}" alt="">
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{book.img_front.url}}" alt="{{ book.title}}">
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{book.img_back.url}}" alt="{{ book.title}}">
           <div class="product-item-description d-flex ml-auto">
             <div class="bg-faded p-5 rounded">
-              <p class="mb-0">{{ book.ISBN }}</p>
-              <p class="mb-0">{{ book.created }}</p>
-              <p class="mb-0">{{ book.updated }}</p>
+              <p class="mb-0 mbt">{{book.description}}</p>
+              <p class="mb-0">ISBN: {{ book.ISBN }}</p>
+              <p class="mb-0">Creado: {{ book.created }}</p>
             </div>
           </div>
         </div>
